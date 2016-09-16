@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>闵浦二桥交通流参数在线识别系统</title>
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/highcharts.js"></script>
+  </head>
+
+
+
+  <body>
+
+    <div class="container">
+        <h2>闵浦二桥交通流参数在线识别系统</h2>
+        <p> </p>
+        <br>
+        <br>
+        <br>
+
+
+        <ul class="nav nav-tabs">
+            <li id="li_1" class="{{tab1_header_class}}"><a href="#menu1">交通流参数识别</a></li>
+            <li id="li_2" class="{{tab2_header_class}}"><a href="#menu2">车辆牌照识别</a></li>
+        </ul>
+
+
+        <!--相应的内容-->
+      <div class="tab-content">
+
+        <div id="menu1" class="tab-pane fade {{tab1_content_class}}">
+
+            <div class="row">
+              <!--视频区域-->
+              <div class="col-xs-12 col-md-7">
+                  <h3>实时视频</h3>
+                  <img id="bg" src="{{url_for('video_feed')}}">
+
+              </div>
+
+              <!--文字参数识别结果-->
+              <div class="col-xs-6 col-md-5">
+                  <h3>车辆识别信息</h3>
+
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>截图</th>
+                          <th>车长</th>
+                          <th>车道</th>
+                          <th>车速</th>
+                          <th>车距</th>
+                          <th>到达时刻</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr class="active">
+                            <th scope="row"> 1</th>
+                            <td></td>
+                            <td>abc</td>
+                            <td>abc</td>
+                            <td> 11 </td>
+                            <td> 11 </td>
+                        </tr>
+
+                        <tr class="success">
+                            <th scope="row"> 3 </th>
+                            <td>abc</td>
+                            <td>abc</td>
+                            <td>abc</td>
+                            <td> 11 </td>
+                            <td> 11 </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+              </div>
+
+            </div>
+
+
+            <!--显示图例-->
+
+            <div class="row">
+
+              <div class="col-xs-12 col-md-12">
+                  <div class="container-fluid" id="data-container"></div>
+              </div>
+
+            </div>
+
+
+        </div>
+
+        <div id="menu2" class="tab-pane fade {{tab2_content_class}}">
+          <h3>Menu 2</h3>
+          <p>Sed ut perspiciatis </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <script src="/js/tab_switch.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script>
+			function getnums() {
+				//alert(55);
+				$('#bg').attr('src', '');
+				$('#bg').attr('src', '/video_feed');
+			}
+			$(document).ready(function(){
+			 	setInterval(getnums, 3000);
+
+			});
+    </script>
+  </body>
+
+
+
+</html>
